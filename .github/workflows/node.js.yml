@@ -25,9 +25,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: npm ci
-      - run: npm run build
-      - run: npm run export
-      - run: touch ./out/.nojekyll
+      - run: npm run deploy
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
