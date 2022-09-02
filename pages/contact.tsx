@@ -1,11 +1,21 @@
+import axios from 'axios';
 import { observer } from 'mobx-react-lite';
 import { NextPage } from 'next';
+import { useEffect } from 'react';
 import { useAppStore } from '../store/appStore';
 import MyWrap from './_wrap';
 
 const Contact: NextPage = observer(() => {
 
     const appStore = useAppStore();
+
+    useEffect(() => {
+        axios.get('https://pokeapi.co/api/v2/pokemon/ditto')
+            .then((resp) => {
+                console.log(resp)
+            })
+
+    }, [])
 
     return (
         <>
